@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+
+    --color-potato:#6366f1
+
+   --color-potato-40: #f0fdf4;
+  --color-potato-500: #22c55e;
+  --color-potato-900: #14532d;
+
+
+
+}
