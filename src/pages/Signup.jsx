@@ -1,6 +1,6 @@
 import React ,{useState} from "react";
 
-import { useNavigate,Link} from "react-router-dom";
+import { useNavigate,Link, replace} from "react-router-dom";
 
 // import {signup} from useAuth
 import { useAuth } from "../context/AuthContext";
@@ -52,7 +52,7 @@ export default  function Signup(){
 
         if (result.status ==="ok"){
 
-            navigate("/")
+            navigate("/",{replace:true})
         }else{
             setError(result.message)
             

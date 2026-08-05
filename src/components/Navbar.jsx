@@ -7,10 +7,28 @@ import SearchBar from "./Searchbar";
 
 import { useAuth } from "../context/AuthContext";
 
+import { replace, useNavigate } from "react-router-dom";
+
 
 export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions}) {
 
-    const { user } = useAuth()
+    const { user,logout } = useAuth()
+
+    const navigate= useNavigate()
+
+    const logout_user = async(e) => {
+
+        e.preventDefault()
+        const response = await logout()
+        if(response.status === "ok"){
+
+            navigate("/",{replace:true})
+        }
+
+
+    } 
+
+
 
     return(
 
@@ -32,6 +50,8 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                     {title}
 
                 </span>
+
+
 
 
 
@@ -67,24 +87,23 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                         )} */}
 
 
-                        {user &&  (
-
-                            <img src={user.profile_url} alt="profile img" className="w-full h-full object-cover"  ></img>
-
-
-
-                         )
-                                            
-                        }
+                        {user && (
+                            <img
+                                src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
+                                alt="profile img"
+                                className="w-full h-full object-cover"
+                            />
+                        )}
                         {/* {user && (<h2 className="text-center overflow-hidden flex items-center justify-center w-full h-full bg-emerald-800 text-slate-100">Okay</h2>)} */}
 
-                        {console.log('user value is ',user)}
+                        {console.log('user value is ', user)}
 
+                    </div>
 
+                    
+                {user && (<button onClick={logout_user} className="bg-emerald-900 text-slate-200 rounded-2xl px-1.5 py-0.75" >Logout </button>
 
-
-                         </div>
-
+                )}
 
 
         </div>

@@ -58,7 +58,7 @@ export default  function Login(){
 
         if (result && result.status ==="ok"){
 
-            navigate("/")
+            navigate("/",{replace:true})
         }else{
             setError(result.message)
             

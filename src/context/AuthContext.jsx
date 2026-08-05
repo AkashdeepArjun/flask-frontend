@@ -102,7 +102,10 @@ export const AuthProvider = ({children}) => {
                 
             }
 
-            const response = await api.post('/register',formData)
+            const response = await api.post('/register',formData , {headers: {
+    // Explicitly set multipart/form-data for this call
+    'Content-Type': 'multipart/form-data',
+  }})
 
             const res = response.data
  
@@ -133,10 +136,12 @@ export const AuthProvider = ({children}) => {
     const logout = async()=>{
 
        const response = await api.get('/logout')
-       if (esponse.data.status=="ok")
+       if (response.data.status=="ok")
        {
             setUser(null)
             localStorage.removeItem('user')
+            return {"status":"ok","message":"logout successfully"}
+
 
        }
        
