@@ -1,9 +1,16 @@
 import React from "react";
 
+
 import { Sparkles,ShieldCheck } from "lucide-react";
 
+import SearchBar from "./Searchbar";
 
-export default function Navbar ({title="MeCommerce"}) {
+import { useAuth } from "../context/AuthContext";
+
+
+export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions}) {
+
+    const { user } = useAuth()
 
     return(
 
@@ -33,6 +40,16 @@ export default function Navbar ({title="MeCommerce"}) {
 
             </div>
 
+            <div className="w-full sm:w-80">
+
+                <SearchBar search_query={search_query} setQuery={setQuery} suggestions={suggestions} />
+
+
+            </div>
+
+
+
+
             <div className="flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-medium text-emerald-400">
 
                 <ShieldCheck className="h-3.5 w-3.5" />
@@ -41,12 +58,32 @@ export default function Navbar ({title="MeCommerce"}) {
 
             </div>
 
+                    <div className="relative w-24 h-24  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden">
+                        
+                      {/*   {user && (
+                        <div className=` {user ? "bg-emerald-400" : "bg-red-500"}` > 
+
+                        </div>
+                        )} */}
 
 
-            
+                        {user &&  (
+
+                            <img src={user.profile_url} alt="profile img" className="w-full h-full object-cover"  ></img>
 
 
 
+                         )
+                                            
+                        }
+                        {/* {user && (<h2 className="text-center overflow-hidden flex items-center justify-center w-full h-full bg-emerald-800 text-slate-100">Okay</h2>)} */}
+
+                        {console.log('user value is ',user)}
+
+
+
+
+                         </div>
 
 
 
