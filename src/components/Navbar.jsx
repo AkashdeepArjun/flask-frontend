@@ -3,6 +3,8 @@ import React from "react";
 
 import { Sparkles,ShieldCheck } from "lucide-react";
 
+import { VerifiedIcon } from "lucide-react";
+
 import SearchBar from "./Searchbar";
 
 import { useAuth } from "../context/AuthContext";
@@ -98,12 +100,24 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         {console.log('user value is ', user)}
 
+
+
+                        
+
                     </div>
 
-                    
-                {user && (<button onClick={logout_user} className="bg-emerald-900 text-slate-200 rounded-2xl px-1.5 py-0.75" >Logout </button>
+                    {user && user.is_verified && ( <VerifiedIcon  className="absolute top-0 right-0.5 w-12 h-12 " />   )}
 
-                )}
+                    
+
+                    
+                {user && (<button onClick={logout_user} className="bg-emerald-900 text-slate-200 rounded-2xl px-3 py-1.75 hover:bg-blue-500 transition-colors hover:cursor-pointer" >Logout </button>
+
+                
+
+                ) }
+
+                
 
 
         </div>
