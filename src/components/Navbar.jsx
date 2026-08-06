@@ -91,7 +91,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         {user && (
                             <img
-                                src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
+                                src={`https://www.laziakeey.in/api/static/uploads/${user.profile_url}`}
                                 alt="profile img"
                                 className="w-full h-full object-cover"
                             />
