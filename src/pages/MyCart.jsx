@@ -61,12 +61,9 @@ export default function MyCart(){
 
     return (
 
-        <div className={`${loading?'animate-pulse':''} flex flex-col justify-center items-center `}>
+        <div>
 
-            {cart_items && (cart_items.map((item)=>{
-
-                <CartItem product={item}></CartItem>
-            }))}
+         <h2>My Cart section</h2>
 
 
 
