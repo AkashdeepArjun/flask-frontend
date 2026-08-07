@@ -1,10 +1,15 @@
 import { useState,useEffect } from "react";
 import api from "../api/client";
+import { Rss } from "lucide-react";
+import { div } from "framer-motion/client";
+import CartItem from "../components/CartItem";
 export default function MyCart(){
 
     const [loading,setLoading] = useState(false)
 
     const [cart_items,setCartItems] = useState([])
+
+    const [error_log,setErrorLog] = useState([])
 
 
     const load_cart_items = async() =>{
@@ -15,10 +20,23 @@ export default function MyCart(){
             
             const response = await api.get('/cart')
 
+            const res =response.data
+
+            if(res.status === "ok"){
+
+                setCartItems(res.products)
+            }else{
+
+                setCartItems([])
+                setErrorLog(res.message)
+
+            }
+
 
         } catch (error) {
             
-
+            setCartItems([])
+            setErrorLog(error)
 
 
 
@@ -34,7 +52,41 @@ export default function MyCart(){
 
     }
 
+    useEffect(()=>{
 
+        load_cart_items()
+
+    },[])
+
+
+    return (
+
+        <div className={`${loading?'animate-pulse':''} flex flex-col justify-center items-center `}>
+
+            {cart_items && (cart_items.map((item)=>{
+
+                <CartItem product={item}></CartItem>
+            }))}
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    )
 
 
 
