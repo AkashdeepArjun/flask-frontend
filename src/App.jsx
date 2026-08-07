@@ -4,6 +4,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import MyCart from "./pages/MyCart";
+import Test from "./pages/Test";
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
       <Route path="/login" element={<Login/>}/>
 
       <Route path="/my_cart" element={<MyCart/>}/>
+
+      <Route path="/test" element ={ <Test/> }/>
 
 
     </Routes>
