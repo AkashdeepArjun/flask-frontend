@@ -18,7 +18,7 @@ function App() {
 
       <Route path="/login" element={<Login/>}/>
 
-      <Route path="/cart" element={<MyCart/>}/>
+      <Route path="/my_cart" element={<MyCart/>}/>
 
 
 
