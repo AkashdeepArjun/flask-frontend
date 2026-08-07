@@ -21,11 +21,6 @@ function App() {
       <Route path="/my_cart" element={<MyCart/>}/>
 
 
-
-
-
-
-
     </Routes>
 
 
