@@ -21,7 +21,7 @@ function App() {
 
       <Route path="/my_cart" element={<MyCart/>}/>
 
-      <Route path="/test" element ={ <Test/> }/>
+      <Route path="/tests" element ={ <Test/> }/>
 
 
     </Routes>
