@@ -1,33 +1,36 @@
 name: Deploy React to public_html
 
-env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
-
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]  # Change to your main branch name if different
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      # 1. Pull the code using v4 actions (bypasses Node deprecation)
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
+      # 2. Setup Node.js v22
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
-      - name: Build React
+      # 3. Install dependencies and compile React app
+      - name: Build React App
         run: |
-          npm ci
+          npm install
           npm run build
 
-      - name: Sync to public_html
+      # 4. Sync compiled /dist output to public_html/
+      - name: Deploy to public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_USERPASSWORD }}
-          local-dir: ./dist/             # Or ./build/
+          local-dir: ./dist/                  # If using Create React App, change to ./build/
           server-dir: ./public_html/
