@@ -85,7 +85,7 @@ export default function MyCart(){
 
         {user && cart_products && (
 
-        <div className="flex w-full h-max items-center justify-center">
+        <div className="flex flex-col w-full h-max items-center justify-center">
         {cart_products.map((item)=>(
             
             <CartItem product={item} key={item.product_id}/>
