@@ -88,7 +88,7 @@ export default function MyCart(){
         <div className="flex w-full h-max items-center justify-center">
         {cart_products.map((item)=>(
             
-            <CartItem product={item}/>
+            <CartItem product={item} key={item.product_id}/>
 
         ))}
 
