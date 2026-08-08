@@ -28,7 +28,7 @@ export default function CartItem({product}){
 
         <h4>{product.price}</h4>
 
-        <h5>{subtotal}</h5>
+        <h5>{product.subtotal}</h5>
 
         <button type="button" className="bg-red-700 text-slate-100 cursor-pointer hover:bg-red-500"> DELETE </button>
 
