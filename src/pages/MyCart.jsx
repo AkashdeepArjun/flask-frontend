@@ -13,7 +13,7 @@ export default function MyCart(){
 
     const { user } = useAuth()
 
-    const {cart_products,fetch_cart,delete_from_cart,cart_id} = useCart()
+    const {cart_products,fetch_cart,delete_from_cart,cart_id,setCartProducts} = useCart()
 
 
     const [loading,setLoading] = useState(false)
@@ -22,7 +22,7 @@ export default function MyCart(){
 
     const [error_log,setErrorLog] = useState([])
 
-
+/* 
     const onDelete = async (cart_id,product_id) =>{
 
 
@@ -38,7 +38,25 @@ export default function MyCart(){
 
 
 
-    } 
+    }  */
+
+
+        const onDelete = async (cart_id, product_id) => {
+    try {
+        const response = await delete_from_cart(cart_id, product_id);
+        
+        if (response.status === "ok") {
+            // Remove the deleted product directly from state
+            setCartProducts(prevProducts => 
+                prevProducts.filter(item => item.product_id !== product_id)
+            );
+        } else {
+            setErrorLog(response.message || response.reason);
+        }
+    } catch (err) {
+        setErrorLog("Network error occurred");
+    }
+};
    
 
 
