@@ -13,7 +13,7 @@
 import { div } from "framer-motion/client";
 import React,{useState} from "react";
 
-export default function CartItem({product}){
+export default function CartItem({product,onDelete}){
 
 
     return(
@@ -30,7 +30,7 @@ export default function CartItem({product}){
 
         <h5>{product.subtotal}</h5>
 
-        <button type="button" className="bg-red-700 text-slate-100 cursor-pointer hover:bg-red-500"> DELETE </button>
+        <button type="button" className="bg-red-700 text-slate-100 cursor-pointer hover:bg-red-500" onClick={onDelete}> DELETE </button>
 
         
         

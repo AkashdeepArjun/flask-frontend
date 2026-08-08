@@ -13,7 +13,7 @@ export default function MyCart(){
 
     const { user } = useAuth()
 
-    const {cart_products,fetch_cart} = useCart()
+    const {cart_products,fetch_cart,delete_from_cart,cart_id} = useCart()
 
 
     const [loading,setLoading] = useState(false)
@@ -23,10 +23,31 @@ export default function MyCart(){
     const [error_log,setErrorLog] = useState([])
 
 
+    const onDelete = async (cart_id,product_id) =>{
+
+
+        const response = await delete_from_cart(cart_id,product_id)
+        
+        if(response.status=="ok"){
+            fetch_cart()
+        }else{
+
+            setErrorLog(response.message)
+
+        }
+
+
+
+    } 
    
 
 
+    useEffect(()=>{
 
+
+
+
+    },[])
 
     
 
@@ -34,7 +55,7 @@ export default function MyCart(){
 
        
 
-    },[])
+    },[cart_products])
 
 
     return (
@@ -88,7 +109,7 @@ export default function MyCart(){
         <div className="flex flex-col w-full h-max items-center justify-center">
         {cart_products.map((item)=>(
             
-            <CartItem product={item} key={item.product_id}/>
+            <CartItem product={item} key={item.product_id} onDelete={onDelete(cart_id,item.product_id)}  />
 
         ))}
 

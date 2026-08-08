@@ -6,6 +6,8 @@ const CartContext = createContext(null)
 
 export const CartProvider =({children}) => {
 
+    const [cart_id,setCartId] = useState([])
+
     const [cart_products,setCartProducts] = useState([])
 
     const [loading,set_loading] = useState(false) 
@@ -35,6 +37,8 @@ export const CartProvider =({children}) => {
           
             setTotalItems(totalItems)
             setBillamount(response_data.total)
+
+            setCartId(response_data.cart_id)
             
             return {status:"ok",products:response_data.products,total_bill:response_data.total }
 
@@ -114,11 +118,53 @@ export const CartProvider =({children}) => {
 
     }
 
+
+    const delete_from_cart = async(cart_id,product_id) =>{
+
+        try {
+
+              const response = await api.post(`/cart/delete?cart_id=${cart_id}&product_id=${product_id} `)
+
+        const real_response = response.data 
+
+        if(real_response.status == "ok") {
+
+
+            return {status:"ok",message:"item deleted successfully"}
+
+
+        }else{
+
+
+            return {status:"failed",message:"item deletion failed"}
+
+
+        }
+            
+        } catch (error) {
+
+            return {status:"failed",message:error}
+
+            
+        }
+      
+
+
+
+
+
+
+
+    }
+
+
+
+
     console.log('1. CartProvider executing, loading state is:', loading);
 
     return (
 
-        <CartContext.Provider value={{cart_products:cart_products,bill_amount,add_to_cart,fetch_cart,total_items}}>
+        <CartContext.Provider value={{cart_id:cart_id,cart_products:cart_products,bill_amount,add_to_cart,fetch_cart,total_items}}>
 
             {/* LOG 2: Place this directly inside the JSX */}
             {console.log('2. CartProvider JSX rendering, children:', children)}
