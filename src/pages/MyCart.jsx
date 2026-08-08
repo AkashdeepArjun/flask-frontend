@@ -1,9 +1,20 @@
 import { useState,useEffect } from "react";
 import api from "../api/client";
-import { Rss } from "lucide-react";
+import { Link, Rss } from "lucide-react";
 import { div } from "framer-motion/client";
 import CartItem from "../components/CartItem";
+
+import { useAuth } from "../context/AuthContext"
+
+import { useCart } from "../context/CartContext";
+
+
 export default function MyCart(){
+
+    const { user } = useAuth()
+
+    const {cart_products,fetch_cart} = useCart()
+
 
     const [loading,setLoading] = useState(false)
 
@@ -12,40 +23,7 @@ export default function MyCart(){
     const [error_log,setErrorLog] = useState([])
 
 
-    const load_cart_items = async() =>{
-
-        setLoading(true)
-
-        try {
-            
-            const response = await api.get('/cart')
-
-            const res =response.data
-
-            if(res.status === "ok"){
-
-                setCartItems(res.products)
-            }else{
-
-                setCartItems([])
-                setErrorLog(res.message)
-
-            }
-
-
-        } catch (error) {
-            
-            setCartItems([])
-            setErrorLog(error)
-
-
-
-        }
-
-        finally{
-
-            setLoading(false)
-        }
+   
 
 
 
@@ -54,16 +32,73 @@ export default function MyCart(){
 
     useEffect(()=>{
 
-        load_cart_items()
+       
 
     },[])
 
 
     return (
 
-        <div>
+        <div className="relative w-full h-max flex flex-col  items-center justify-center">
+        {!user && (
+            <div className="bg-slate-100 border border-gray-500 flex items-center justify-center">
 
-         <h2>My Cart section</h2>
+
+                <Link to ="/login" className="border border-sky-800 text-2xl">
+
+                    
+                    <p>Login to see the cart </p>
+                
+                
+                </Link>
+
+
+
+
+            </div>
+        ) }
+
+
+        {user && !cart_products && 
+            (
+            <div className="bg-slate-100 border border-gray-500 flex items-center justify-center">
+
+
+
+                    
+                    <p className="text-2xl font-sans  text-gray-300 ">  Cart is Empty    </p>
+                
+                
+
+
+
+
+            </div>
+        )
+
+
+
+
+
+        }
+
+
+        {user && cart_products && (
+
+        <div className="flex w-full h-max items-center justify-center">
+        {cart_products.map((item)=>(
+            
+            <CartItem product={item}/>
+
+        ))}
+
+
+
+        </div>
+
+
+        )}
+         
 
 
 

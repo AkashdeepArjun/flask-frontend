@@ -31,10 +31,12 @@ export const CartProvider =({children}) => {
             
 
             const totalItems = cart_products.reduce((sum, item) => sum + item.quantity, 0);
-
+ 
+          
             setTotalItems(totalItems)
-
             setBillamount(response_data.total)
+            
+            return {status:"ok",products:response_data.products,total_bill:response_data.total }
 
 
 
@@ -86,7 +88,6 @@ export const CartProvider =({children}) => {
         const response_data  = response.data
             
         if(response_data.status=="ok"){
-
 
             fetch_cart()
             return {status:"ok",message:"product added to cart"}
