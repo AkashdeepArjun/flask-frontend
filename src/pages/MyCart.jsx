@@ -28,7 +28,7 @@ export default function MyCart(){
 
 
 
-    }
+    
 
     useEffect(()=>{
 
@@ -119,6 +119,8 @@ export default function MyCart(){
 
 
     )
+
+}
 
 
 
