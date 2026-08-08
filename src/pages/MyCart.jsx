@@ -62,6 +62,9 @@ export default function MyCart(){
 
     useEffect(()=>{
 
+        if(cart_products){
+            console.log(`cart products are ${cart_products}`)
+        }
 
 
 
