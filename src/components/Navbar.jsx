@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import { Sparkles,ShieldCheck } from "lucide-react";
+import { Sparkles,ShieldCheck, LogInIcon, ShoppingCartIcon } from "lucide-react";
 
 import { VerifiedIcon } from "lucide-react";
 
@@ -9,7 +9,7 @@ import SearchBar from "./Searchbar";
 
 import { useAuth } from "../context/AuthContext";
 
-import { replace, useNavigate } from "react-router-dom";
+import { Link, replace, useNavigate } from "react-router-dom";
 
 
 export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions}) {
@@ -90,12 +90,33 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
 
                         {user && (
+                            <div>
                             <img
                                 src={`https://www.laziakeey.in/api/static/uploads/${user.profile_url}`}
                                 alt="profile img"
                                 className="w-full h-full object-cover"
                             />
+
+                            <Link to="/my_cart">
+                            <div className="relative flex items-center justify-center" >
+
+                                <ShoppingCartIcon></ShoppingCartIcon>
+                            <p className="absolute top-0 right-0">0</p>
+                            </div>
+                            </Link>
+
+                            </div>
+
                         )}
+
+                        {!user && (
+                        <Link to="/login">
+                            <LogInIcon/>
+
+                        </Link>
+
+                        )}
+
                         {/* {user && (<h2 className="text-center overflow-hidden flex items-center justify-center w-full h-full bg-emerald-800 text-slate-100">Okay</h2>)} */}
 
                         {console.log('user value is ', user)}
