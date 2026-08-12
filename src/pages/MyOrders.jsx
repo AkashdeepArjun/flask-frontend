@@ -5,7 +5,7 @@ import { useCart } from "../context/CartContext"
 import { div } from "framer-motion/client"
 import { Link } from "react-router-dom"
 
-const MyOrders = ()=>{
+export default function MyOrders(){
 
 
     const {user}  = useAuth()
@@ -120,4 +120,4 @@ const MyOrders = ()=>{
 }
 
 
-export default MyOrders
+// export default MyOrders
