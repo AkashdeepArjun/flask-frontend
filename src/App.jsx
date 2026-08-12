@@ -25,7 +25,7 @@ function App() {
 
       <Route path="/tests" element ={ <Test/> }/>
 
-      <Route path="/my_orders" element={<MyOrders/>}
+      <Route path="/my_orders" element={<MyOrders/>}/>
 
 
     </Routes>
