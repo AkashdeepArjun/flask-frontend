@@ -61,17 +61,17 @@ export default function MyOrders(){
 
     return(
 
-        <div className={`  relative w-full h-full bg-emerald-800 justify-self-center flex items-center`}>
+        <div className={`  relative w-full h-full bg-emerald-800 justify-self-center flex items-center justify-center`}>
         
         <table className="border border-collapse">
             <thead>
                 <tr>
-                {/*     { orders && Object.keys(orders[0]).forEach(key => {(<th>{key}</th>)
-                    
-                    
-                    console.log(key, obj[key]);
-                    })}
- */}
+             
+                   <td className=" p-2 border text-xl font-bold">ORDER ID</td>
+                   <td className="p-2 border text-xl font-bold">CREATED AT</td>   
+
+                    <td className="p-2 border font-bold"> AMOUNT</td>
+                
 
 
                 </tr>
