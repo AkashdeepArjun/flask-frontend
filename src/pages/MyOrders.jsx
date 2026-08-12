@@ -83,11 +83,11 @@ export default function MyOrders(){
                 {orders && orders.map((order=>(
                 
                 <tr className={`${load?'animate-pulse':''} border border-black `}>
-                    <td className="p-2"> <Link to={`/my_order/:${order.order_id}`}>{order.order_id}</Link>   </td>
+                    <td className="p-2 border"> <Link to={`/my_order/:${order.order_id}`}>{order.order_id}</Link>   </td>
 
-                     <td>{order.created_at}</td>   
+                     <td className=" p-2 border">{order.created_at}</td>   
 
-                    <td> <h3>{order.amount}</h3>   </td>
+                    <td className="p-2 border"> <h3>{order.amount}</h3>   </td>
 
                 </tr>
 
