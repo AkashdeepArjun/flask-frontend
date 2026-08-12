@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useAuth } from "../context/AuthContext"
 
 import { useCart } from "../context/CartContext"
@@ -48,6 +48,13 @@ const MyOrders = ()=>{
 
 
     }
+
+
+    useEffect(()=>{
+
+        get_orders()
+
+    },[])
 
 
 
