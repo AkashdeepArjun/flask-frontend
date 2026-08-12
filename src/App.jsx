@@ -8,6 +8,8 @@ import Test from "./pages/Test";
 
 import MyOrders from "./pages/MyOrders"
 
+import OrderDetails from "./pages/OrderDetails";
+
 function App() {
 
   return (
@@ -26,6 +28,8 @@ function App() {
       <Route path="/tests" element ={ <Test/> }/>
 
       <Route path="/my_orders" element={<MyOrders/>}/>
+
+      <Route path ="/my__order/:id" element={<OrderDetails/>}/>
 
 
     </Routes>

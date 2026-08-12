@@ -195,11 +195,37 @@ export const CartProvider =({children}) => {
 
     }
 
-    
+
+    const  my_orders = async()=>{
+
+        try {
+
+            const response = await api.get('/my_orders')
+
+            const wrapped_response = response.data
+
+            if(wrapped_response.status === "ok"){
+
+                return {status:"ok",orders:wrapped_response.orders}
+            }
+            else{
+          
+                return{status:"failed",reason:"failed due to constraints"}
+          
+          
+            }
 
 
 
 
+        } catch (error) {
+            console.log(err);
+            return {status:"failed",reason:error}
+            
+        }
+
+
+    }
 
 
 
@@ -207,7 +233,7 @@ export const CartProvider =({children}) => {
 
     return (
 
-        <CartContext.Provider value={{cart_id:cart_id,cart_products:cart_products,setCartProducts,bill_amount,add_to_cart,fetch_cart,total_items,delete_from_cart,place_order}}>
+        <CartContext.Provider value={{cart_id:cart_id,cart_products:cart_products,setCartProducts,bill_amount,add_to_cart,fetch_cart,total_items,delete_from_cart,place_order,my_orders}}>
 
             {/* LOG 2: Place this directly inside the JSX */}
             {console.log('2. CartProvider JSX rendering, children:', children)}
