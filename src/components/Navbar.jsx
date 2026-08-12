@@ -91,13 +91,18 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         {user && (
                             <div className="grid grid-cols-3">
-                            <img
-                                src={`https://www.laziakeey.in/api/static/uploads/${user.profile_url}`}
-                                alt="profile img"
-                                className="w-full h-full object-cover"
-                            />
 
-                            <Link to="/my_cart">
+                            <div className="w-24 h-24">
+
+                                     <img
+                                        src={`https://www.laziakeey.in/api/static/uploads/${user.profile_url}`}
+                                        alt="profile img"
+                                        className="w-full h-full object-cover"
+                                    />
+
+                            </div>
+
+                            <Link to="/my_cart" className="">
                             <div className="relative flex items-center justify-center" >
 
                                 <ShoppingCartIcon></ShoppingCartIcon>
