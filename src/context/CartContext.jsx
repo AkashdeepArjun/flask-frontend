@@ -162,7 +162,7 @@ export const CartProvider =({children}) => {
     const place_order = async()=> {
 
         try{
-        const response = await api.get('/place_order')
+        const response = await api.post('/place_order')
 
         const unpacked_response = response.data 
 
