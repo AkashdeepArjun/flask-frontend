@@ -72,11 +72,11 @@ export default function MyCart(){
 
     
 
-    useEffect(()=>{
+   /*  useEffect(()=>{
 
        
 
-    },[cart_products])
+    },[cart_products]) */
 
 
     return (
