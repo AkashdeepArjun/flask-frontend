@@ -205,6 +205,8 @@ export const CartProvider =({children}) => {
 
             const wrapped_response = response.data
 
+            console.log(wrapped_response);
+
             if(wrapped_response.status === "ok"){
 
                 return {status:"ok",orders:wrapped_response.orders}
