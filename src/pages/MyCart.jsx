@@ -85,6 +85,8 @@ export default function MyCart(){
 
     const onOrderPlaced = async(e) =>{
 
+        console.log('button was clicked')
+
         setOrderPlaceState(true)
 
         try{
@@ -194,7 +196,7 @@ export default function MyCart(){
         )}
          
     
-    
+
         
 
 
