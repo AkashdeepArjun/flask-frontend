@@ -193,11 +193,8 @@ export default function MyCart(){
 
         )}
          
-         {error_log && (
-            <div className="absolute top-4 right-4 border border-red-800 bg-black px-2 py-1  text-slate-100"> 
-                <p>{error_log}</p>
-            </div>
-         )}
+    
+    
         
 
 
