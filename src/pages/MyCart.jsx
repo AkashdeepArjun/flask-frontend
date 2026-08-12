@@ -26,6 +26,10 @@ export default function MyCart(){
 
     const [error_log,setErrorLog] = useState([])
 
+    const [order_place_state ,setOrderPlaceState] = useState(false)
+
+
+
 /* 
     const onDelete = async (cart_id,product_id) =>{
 
@@ -81,6 +85,9 @@ export default function MyCart(){
 
     const onOrderPlaced = async(e) =>{
 
+        setOrderPlaceState(true)
+
+        try{
         e.preventDefault()
 
         const response =  await place_order()
@@ -95,6 +102,18 @@ export default function MyCart(){
 
         }
 
+        }catch(error){
+
+
+            setErrorLog(error)
+
+
+
+        }
+
+        finally{
+            setOrderPlaceState(false)
+        }
 
 
     }
@@ -163,16 +182,23 @@ export default function MyCart(){
 
         ))}
 
-        <button className="absolute bottom-1 right-1 px-2 py-1 bg-cyan-950 hover:bg-cyan-400 cursor-pointer" onClick={onOrderPlaced}>Place Order</button>
+        <button disabled={order_place_state} className="absolute bottom-1 right-1 px-2 py-1 text-slate-100 bg-cyan-950 hover:bg-cyan-400 cursor-pointer" onClick={onOrderPlaced}>Place Order</button>
 
 
 
         </div>
 
 
+
+
         )}
          
-
+         {error_log && (
+            <div className="absolute top-4 right-4 border border-red-800 bg-black px-2 py-1  text-slate-100"> 
+                <p>{error_log}</p>
+            </div>
+         )}
+        
 
 
 
