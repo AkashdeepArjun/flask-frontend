@@ -1,5 +1,5 @@
 import { div } from "framer-motion/client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Link, useParams } from "react-router-dom";
 import api from "../api/client";
@@ -37,7 +37,7 @@ purchased_products.append({
     
         if(wrapped_response.status =="ok"){
 
-
+            
             setDetail(wrapped_response.order_items)
 
             setTotalBill(wrapped_response.total_bill)
@@ -62,6 +62,13 @@ purchased_products.append({
 
 
     }
+
+
+    useEffect(()=>{
+
+        fetch_detail()
+
+    },[])
 
 
     return (
