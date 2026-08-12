@@ -90,7 +90,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
 
                         {user && (
-                            <div>
+                            <div className="grid grid-cols-3">
                             <img
                                 src={`https://www.laziakeey.in/api/static/uploads/${user.profile_url}`}
                                 alt="profile img"
@@ -110,10 +110,13 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                         )}
 
                         {!user && (
-                        <Link to="/login">
-                            <LogInIcon/>
+                        <div className="w-12 h-12 flex justify-center items-center">
+                            <Link to="/login" >
+                            <icon/>
 
-                        </Link>
+                            </Link>
+
+                        </div>
 
                         )}
 
