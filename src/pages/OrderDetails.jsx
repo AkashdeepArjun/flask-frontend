@@ -96,7 +96,7 @@ purchased_products.append({
 
 
                 <tr className="px-4 py-2 border">
-                        <td> <Link> {item.product_name} </Link>   </td>
+                        <td> <Link to={`/products/${item.product_id}`}> {item.product_name} </Link>   </td>
                         <td>{item.price}</td>
                         <td>{item.quantity}</td>
                         <td>{item.subtotal}</td>
