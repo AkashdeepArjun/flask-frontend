@@ -85,7 +85,7 @@ export default function MyCart(){
 
         const response =  await place_order()
 
-        
+
         if(response.status == "ok"){
 
             setCartItems([])
@@ -163,7 +163,7 @@ export default function MyCart(){
 
         ))}
 
-        <button className="absolute bottom-1 right-1 px-2 py-1 bg-cyan-950 hover:bg-cyan-400 cursor-pointer" onClick={}>Place Order</button>
+        <button className="absolute bottom-1 right-1 px-2 py-1 bg-cyan-950 hover:bg-cyan-400 cursor-pointer" onClick={onOrderPlaced}>Place Order</button>
 
 
 
