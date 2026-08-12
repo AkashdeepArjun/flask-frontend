@@ -6,6 +6,8 @@ import Login from "./pages/Login"
 import MyCart from "./pages/MyCart";
 import Test from "./pages/Test";
 
+import MyOrders from "./pages/MyOrders"
+
 function App() {
 
   return (
@@ -22,6 +24,8 @@ function App() {
       <Route path="/my_cart" element={<MyCart/>}/>
 
       <Route path="/tests" element ={ <Test/> }/>
+
+      <Route path="/my_orders" element={<MyOrders/>}
 
 
     </Routes>

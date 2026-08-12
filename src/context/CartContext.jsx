@@ -159,6 +159,47 @@ export const CartProvider =({children}) => {
 
     }
 
+    const place_order = async()=> {
+
+        try{
+        const response = await api.get('/place_order')
+
+        const unpacked_response = response.data 
+
+        if (unpacked_response.status ==="ok"){
+
+
+            return {status:"ok",message:"ordered placed successfully"}
+
+
+
+        }else {
+
+
+            return {status:"failed",reason:"could not place order"}
+
+
+        }
+
+        }catch(err){
+
+
+            return {status:"failed",reason:err}
+
+            
+        }
+    
+
+
+
+
+    }
+
+    
+
+
+
+
 
 
 

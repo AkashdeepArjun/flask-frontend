@@ -7,13 +7,17 @@ import CartItem from "../components/CartItem";
 import { useAuth } from "../context/AuthContext"
 
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 
 export default function MyCart(){
 
+
+    const navigate = useNavigate()
+
     const { user } = useAuth()
 
-    const {cart_products,fetch_cart,delete_from_cart,cart_id,setCartProducts} = useCart()
+    const {cart_products,fetch_cart,delete_from_cart,cart_id,setCartProducts,place_order} = useCart()
 
 
     const [loading,setLoading] = useState(false)
@@ -73,6 +77,28 @@ export default function MyCart(){
 
     },[])
 
+
+
+    const onOrderPlaced = async(e) =>{
+
+        e.preventDefault()
+
+        const response =  await place_order()
+
+        
+        if(response.status == "ok"){
+
+            setCartItems([])
+
+            navigate("/my_orders")
+
+
+        }
+
+
+
+    }
+
     
 
    /*  useEffect(()=>{
@@ -84,7 +110,7 @@ export default function MyCart(){
 
     return (
 
-        <div className="relative w-full h-max flex flex-col  items-center justify-center">
+        <div className="relative w-full h-max flex flex-col justify-between">
         {!user && (
             <div className="bg-slate-100 border border-gray-500 flex items-center justify-center">
 
@@ -130,12 +156,14 @@ export default function MyCart(){
 
         {user && cart_products && (
 
-        <div className="flex flex-col w-full h-max items-center justify-center">
+        <div className=" relative flex flex-col w-full h-max items-center justify-center">
         {cart_products.map((item)=>(
             
             <CartItem product={item} key={item.product_id} onDelete={()=>onDelete(cart_id,item.product_id) }  />
 
         ))}
+
+        <button className="absolute bottom-1 right-1 px-2 py-1 bg-cyan-950 hover:bg-cyan-400 cursor-pointer" onClick={}>Place Order</button>
 
 
 
