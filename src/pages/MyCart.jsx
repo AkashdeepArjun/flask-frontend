@@ -93,7 +93,9 @@ export default function MyCart(){
         e.preventDefault()
 
         const response =  await place_order()
-
+        
+        console.log(`response is ${response}`);
+        
 
         if(response.status == "ok"){
 
