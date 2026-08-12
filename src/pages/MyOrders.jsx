@@ -61,9 +61,9 @@ export default function MyOrders(){
 
     return(
 
-        <div className={`  relative w-full h-full bg-emerald-800 justify-self-center flex items-center justify-center`}>
+        <div className={`  relative max-h-full max-w-full bg-emerald-800 justify-self-center flex items-center justify-center`}>
         
-        <table className="border border-collapse">
+        <table className="border border-collapse ">
             <thead>
                 <tr>
              
