@@ -207,7 +207,7 @@ export const CartProvider =({children}) => {
 
     return (
 
-        <CartContext.Provider value={{cart_id:cart_id,cart_products:cart_products,setCartProducts,bill_amount,add_to_cart,fetch_cart,total_items,delete_from_cart}}>
+        <CartContext.Provider value={{cart_id:cart_id,cart_products:cart_products,setCartProducts,bill_amount,add_to_cart,fetch_cart,total_items,delete_from_cart,place_order}}>
 
             {/* LOG 2: Place this directly inside the JSX */}
             {console.log('2. CartProvider JSX rendering, children:', children)}

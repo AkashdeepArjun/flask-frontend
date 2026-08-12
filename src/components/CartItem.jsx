@@ -11,6 +11,7 @@
  */
 
 import { div } from "framer-motion/client";
+import { DeleteIcon } from "lucide-react";
 import React,{useState} from "react";
 
 export default function CartItem({product,onDelete}){
@@ -30,7 +31,7 @@ export default function CartItem({product,onDelete}){
 
         <h5>{product.subtotal}</h5>
 
-        <button type="button" className="bg-red-700 text-slate-100 cursor-pointer hover:bg-red-500" onClick={onDelete}> DELETE </button>
+        <DeleteIcon type="button" onClick={onDelete}> DELETE </DeleteIcon>
 
         
         
