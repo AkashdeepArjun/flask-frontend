@@ -59,12 +59,12 @@ const MyOrders = ()=>{
         <table className="border border-collapse">
             <thead>
                 <tr>
-                    { orders && Object.keys(orders[0]).forEach(key => {(<th>{key}</th>)
+                {/*     { orders && Object.keys(orders[0]).forEach(key => {(<th>{key}</th>)
                     
                     
                     console.log(key, obj[key]);
                     })}
-
+ */}
 
 
                 </tr>
@@ -75,7 +75,7 @@ const MyOrders = ()=>{
 
                 {orders && orders.map((order=>(
                 
-                <tr className={`${load?'animate-pulse':''} border border-black  `}>
+                <tr className={`${load?'animate-pulse':''} border border-black `}>
                     <td className="p-2"> <Link to={`/my_orders/:${order.order_id}`}>{order.order_id}</Link>   </td>
 
                      <td>{order.created_at}</td>   
