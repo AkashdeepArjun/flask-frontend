@@ -41,8 +41,11 @@ export default function MyCart(){
     }  */
 
 
-        const onDelete = async (cart_id, product_id) => {
+        const onDelete = async (e,cart_id, product_id) => {
     try {
+
+
+        e.preventDefault()
         const response = await delete_from_cart(cart_id, product_id);
         
         if (response.status === "ok") {
