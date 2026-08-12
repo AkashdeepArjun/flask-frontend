@@ -131,7 +131,7 @@ export const CartProvider =({children}) => {
 
         if(real_response.status == "ok") {
 
-
+            fetch_cart()
             return {status:"ok",message:"item deleted successfully"}
 
 
