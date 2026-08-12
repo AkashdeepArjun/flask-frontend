@@ -197,7 +197,8 @@ export const CartProvider =({children}) => {
 
 
     const  my_orders = async()=>{
-
+        console.log(`function is called here `);
+        
         try {
 
             const response = await api.get('/my_orders')
