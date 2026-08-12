@@ -121,6 +121,8 @@ export const CartProvider =({children}) => {
 
     const delete_from_cart = async(cart_id,product_id) =>{
 
+        console.log(` cart id :${cart_id} and product id   ${product_id} recieved   `)
+
         try {
 
               const response = await api.post(`/cart/delete?cart_id=${cart_id}&product_id=${product_id} `)
