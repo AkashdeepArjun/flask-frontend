@@ -127,7 +127,7 @@ export const CartProvider =({children}) => {
 
               const response = await api.post(`/cart/delete?cart_id=${cart_id}&product_id=${product_id} `)
 
-        const real_response = response.data 
+              const real_response = response.data 
 
         if(real_response.status == "ok") {
 

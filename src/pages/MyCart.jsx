@@ -133,7 +133,7 @@ export default function MyCart(){
         <div className="flex flex-col w-full h-max items-center justify-center">
         {cart_products.map((item)=>(
             
-            <CartItem product={item} key={item.product_id} onDelete={onDelete}  />
+            <CartItem product={item} key={item.product_id} onDelete={()=>onDelete(cart_id,item.product_id) }  />
 
         ))}
 
