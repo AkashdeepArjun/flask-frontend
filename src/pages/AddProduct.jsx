@@ -128,6 +128,11 @@ const inputStyle = {
             payload.append('images',file)
         })
 
+
+        for (let [key, val] of payload.entries()) {
+        console.log(`${key}:`, val);
+      }
+
         try {
           
 // @app.route('/inventory',methods=['POST'])
