@@ -86,7 +86,7 @@ export default function ProductCard({product}){
 
             <div className="mt-6 flex justify-between items-center pt-4 border-t border-slate-800">
 
-                {product.image_url && <img  src={product.image_url} className="h-24 w-24 object-cover" />}
+                {product.image_url && <img src={product.image_url} className="h-24 w-24 object-contain" />}
 
                <span className="text-lg font-semibold text-emerald-400">
             

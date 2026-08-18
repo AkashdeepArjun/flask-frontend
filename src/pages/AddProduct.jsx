@@ -330,7 +330,7 @@ const inputStyle = {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onSave={(files) => setSelectedImages(files)}
-        initialFiles={selectedImages}
+        initialFiles={selected_images}
       />
 
 
