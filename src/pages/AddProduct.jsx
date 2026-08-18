@@ -128,10 +128,12 @@ const inputStyle = {
         })
 
         try {
+          
+// @app.route('/inventory',methods=['POST'])
             // UPLOADING PRODUCT LOGIC 
             const response = await api.post('/inventory',payload,{
 
-                headers:{"Content-Type": "multipart/form-data"},
+                // headers:{"Content-Type": "multipart/form-data"},
 
                 onUploadProgress:(ProgressEvent)=>{
 
