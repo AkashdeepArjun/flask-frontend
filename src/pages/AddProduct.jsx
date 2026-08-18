@@ -156,6 +156,14 @@ const inputStyle = {
             const wrapped_data = response.data 
 
             console.log(`wrappeed response is ${wrapped_data}`);
+
+            console.log(` status is ${wrapped_data.status}`)
+
+            console.log(`reason ${wrapped_data.reason}`)
+
+            console.log(`message ${wrapped_data.message} `)
+
+            
             
             
             // REDIRECTION ON SUCCESS 
