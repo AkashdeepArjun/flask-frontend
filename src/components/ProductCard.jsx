@@ -92,7 +92,7 @@ export default function ProductCard({product}){
 
                 {product.image_url ? (
                 <img
-      src={`https://www.laziakeey.in${product.image_url}`}
+      src={product.image_url}
       alt={product.title || product.name || "Product image"}
       loading="lazy"
       className="h-full w-full object-contain p-1"
