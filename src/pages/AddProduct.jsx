@@ -343,7 +343,7 @@ const inputStyle = {
 
 <ImagePicker
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={() => setModalOpen(false)}
         onSave={(files) => setSelectedImages(files)}
         initialFiles={selected_images}
       />
