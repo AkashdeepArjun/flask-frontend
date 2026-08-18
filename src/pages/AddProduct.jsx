@@ -3,11 +3,14 @@ import ImagePicker from "../components/ImagePicker";
 import axios from "axios";
 import { m } from "framer-motion";
 
+import { useNavigate } from "react-router-dom";
+
 
 import api from '../api/client'
 
 export default function AddProduct(){
 
+  navigate = useNavigate()
 
 const inputStyle = {
   width: '100%',
@@ -150,14 +153,26 @@ const inputStyle = {
 
             })
 
+            const wrapped_data = response.data 
+            
+            // REDIRECTION ON SUCCESS 
+           
+
+
+
+            
+
+ if(wrapped_data.status === "ok"){
+
             setStatusMessage({'status':"ok"})
             setSpecs([{key:'',value:''}])
             setSelectedImages([])
             setFormData({name:'',price:'',product_id:'',stock:'',description:'',category:''})
             // setSubmitting(false)
 
-
-
+              navigate('/')
+            
+ }
 
 
             
