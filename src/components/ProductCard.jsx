@@ -88,6 +88,7 @@ export default function ProductCard({product}){
 
                 <div className="w-24 h-24 shrink-0 overflow-hidden bg-gray-100 flex items-center justify-center">
 
+                { product.image_url && console.log(product.image_url)}
 
                 {product.image_url ? (
                 <img
