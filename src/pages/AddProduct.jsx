@@ -223,6 +223,14 @@ const inputStyle = {
         {/* Core Inputs */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
           <div>
+          <label>Product Id</label>
+          <input required type="text" name="product_id" value={form_data.value} onChange={handle_input_change} style={inputStyle}  > </input>
+
+          </div>
+
+
+
+          <div>
             <label>Product Name *</label>
             <input required type="text" name="name" value={form_data.name} onChange={handle_input_change} style={inputStyle} />
           </div>
