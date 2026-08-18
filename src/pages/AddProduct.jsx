@@ -10,7 +10,7 @@ import api from '../api/client'
 
 export default function AddProduct(){
 
-  navigate = useNavigate()
+  const navigate = useNavigate()
 
 const inputStyle = {
   width: '100%',
