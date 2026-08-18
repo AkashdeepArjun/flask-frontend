@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 import api from '../api/client'
+import { AlignHorizontalJustifyCenter } from "lucide-react";
 
 export default function AddProduct(){
 
@@ -181,7 +182,7 @@ const inputStyle = {
             setStatusMessage({'status':"ok"})
             setSpecs([{key:'',value:''}])
             setSelectedImages([])
-            setFormData({name:'',price:'',product_id:'',stock:'',description:'',category:''})
+            setFormData({product_id:'',name:'',price:'',product_id:'',stock:'',description:'',category:''})
             // setSubmitting(false)
 
               navigate('/')
@@ -232,31 +233,70 @@ const inputStyle = {
 
       <form onSubmit={handle_submit}>
         {/* Core Inputs */}
+
+
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+
+          {/* PRODUCT ID  */}
+
           <div>
           <label>Product Id</label>
           <input required type="text" name="product_id" value={form_data.value} onChange={handle_input_change} style={inputStyle} />
 
           </div>
 
-
-
+            {/* PRODUCT NAME  */}
           <div>
             <label>Product Name *</label>
             <input required type="text" name="name" value={form_data.name} onChange={handle_input_change} style={inputStyle} />
           </div>
+
+
+          {/* PRODUCT BRAND  */}
+          
           <div>
             <label>Brand *</label>
             <input required type="text" name="brand" value={form_data.brand} onChange={handle_input_change} style={inputStyle} />
           </div>
+
+            {/* PRODUCT CATEGORY */}
+
           <div>
             <label>Category *</label>
             <input required type="text" name="category" value={form_data.category} onChange={handle_input_change} style={inputStyle} />
           </div>
+
+
+              {/* PRODUCT PRICE  */}
+
+
           <div>
             <label>Price ($) *</label>
             <input required type="number" step="0.01" name="price" value={form_data.price} onChange={handle_input_change} style={inputStyle} />
           </div>
+
+            
+
+            {/* PRODUCT STOCK  */}
+
+
+          <div>
+            <label>STOCK</label>
+            "<input required type="number" step="1" name="stock" value={form_data.stock} onChange={handle_input_change} style={inputStyle} ></input>
+          </div>
+          
+
+            {/* PRODUCT DESCRIPTION  */}
+
+          <div>
+            <label>Description</label>
+            "<input required type="text" step="1" name="description" value={form_data.description} onChange={handle_input_change} style={inputStyle} ></input>
+          </div>
+          
+
+
+
+
         </div>
 
         {/* Media Trigger */}
