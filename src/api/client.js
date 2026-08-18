@@ -9,9 +9,6 @@ const api = axios.create({
 
     }
 
-
-
-
 });
 // Interceptor to handle FormData uploads seamlessly
 api.interceptors.request.use((config) => {

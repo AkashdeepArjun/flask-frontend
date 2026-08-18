@@ -86,7 +86,36 @@ export default function ProductCard({product}){
 
             <div className="mt-6 flex justify-between items-center pt-4 border-t border-slate-800">
 
-                {product.image_url && <img src={product.image_url} className="h-24 w-24 object-contain" />}
+                <div className="w-24 h-24 shrink-0 overflow-hidden bg-gray-100 flex items-center justify-center">
+
+
+                {product.image_url ? (
+                <img
+      src={product.image_url}
+      alt={product.title || product.name || "Product image"}
+      loading="lazy"
+      className="h-full w-full object-contain p-1"
+      onError={(e) => {
+        // Fallback if image path 404s
+        e.currentTarget.src = "/placeholder-image.png";
+      }}
+    />
+  ) : (
+    <span className="text-xs text-gray-400">No Image</span>
+  )}
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
 
                <span className="text-lg font-semibold text-emerald-400">
             
