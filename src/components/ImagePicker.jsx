@@ -436,7 +436,7 @@ export default function ImagePicker({
 
           <div style={styles.footer}>
           <span style={{ fontSize: '0.85rem', color: '#64748b' }}>
-            {selectedFiles.length} of {maxFiles} selected
+            {selected_files.length} of {maxFiles} selected
           </span>
           <div>
             <button type="button" style={styles.cancelBtn} onClick={onClose}>
