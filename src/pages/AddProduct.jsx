@@ -326,7 +326,7 @@ const inputStyle = {
 
 
 
-<ImagePickerModal
+<ImagePicker
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onSave={(files) => setSelectedImages(files)}
