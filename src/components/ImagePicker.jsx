@@ -442,7 +442,7 @@ export default function ImagePicker({
             <button type="button" style={styles.cancelBtn} onClick={onClose}>
               Cancel
             </button>
-            <button type="button" style={styles.applyBtn} onClick={handleConfirm}>
+            <button type="button" style={styles.applyBtn} onClick={handle_confirm}>
               Apply Selection ({selected_files.length})
             </button>
           </div>
