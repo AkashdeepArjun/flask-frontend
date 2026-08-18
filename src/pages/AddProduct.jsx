@@ -224,7 +224,7 @@ const inputStyle = {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
           <div>
           <label>Product Id</label>
-          <input required type="text" name="product_id" value={form_data.value} onChange={handle_input_change} style={inputStyle}  > </input>
+          <input required type="text" name="product_id" value={form_data.value} onChange={handle_input_change} style={inputStyle} />
 
           </div>
 
