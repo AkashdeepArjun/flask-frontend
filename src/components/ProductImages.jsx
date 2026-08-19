@@ -83,7 +83,7 @@ export default function ProductImages() {
             <img src={preview_image_url} className="w-full h-full p-1 border border-slate-700 rounded-2xl"/>
 
             <div className="w-full h-screen grid grid-cols-3 grid-rows-3">
-
+{image_urls && console.log(`image urls ${image_urls}`)}
 {image_urls.map((l, index) => {
     return (
         <div
