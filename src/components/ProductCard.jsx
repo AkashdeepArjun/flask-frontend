@@ -8,6 +8,8 @@ import { div } from "framer-motion/client";
 import { useCart } from "../context/CartContext";
 import QuantityAdjuster from "./QuantityAdjuster";
 
+import { Link } from "react-router-dom";
+
 
 
 export default function ProductCard({product}){
