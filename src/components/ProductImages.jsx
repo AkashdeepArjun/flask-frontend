@@ -78,7 +78,7 @@ export default function ProductImages() {
 
     return(
 
-        <div className="w-0.5 h-0.7 grid grid-cols-2 p-4 ">
+        <div className="w-screen h-3/4 grid grid-cols-2 p-4 justify-self-center  ">
 
             <img src={preview_image_url} className="w-full h-full p-1 border border-slate-700 rounded-2xl"/>
 
