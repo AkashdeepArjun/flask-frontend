@@ -84,8 +84,9 @@ export default function ProductImages() {
 
             <div className="w-full h-screen grid grid-cols-3 grid-rows-3">
 
-                {image_urls.map((l)=>{
-                    <div className={`w-full h-full ${l == preview_image_url?'border border-amber-400':''}`} onClick={(e)=>{
+                {image_urls.map((l,index)=> {
+                    return
+                    <div key={`${l}-${index}`} className={`w-full h-full ${l == preview_image_url?'border border-amber-400':''}`} onClick={(e)=>{
 
 
                         setPreviewImageUrl(l)
