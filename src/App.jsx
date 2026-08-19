@@ -35,7 +35,7 @@ function App() {
 
       <Route path ="/add_product" element={<AddProduct/>}    ></Route>
 
-      <Route path ="/products/:id/images" element={<ProductImages/>} ></Route>
+      <Route path ="/products/:product_id/images" element={<ProductImages/>} ></Route>
 
 
     </Routes>
