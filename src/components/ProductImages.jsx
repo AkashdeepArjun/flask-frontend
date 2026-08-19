@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 
 import api from "../api/client"
-import { useParams } from "react-router-dom"
+import { useParams,Link } from "react-router-dom"
+
+
 
 export default function ProductImages() {
 
@@ -18,6 +20,7 @@ export default function ProductImages() {
 
 
     const [error,setError] = useState(null)
+
 
 
 

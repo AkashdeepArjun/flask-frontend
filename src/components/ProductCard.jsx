@@ -8,6 +8,8 @@ import { div } from "framer-motion/client";
 import { useCart } from "../context/CartContext";
 import QuantityAdjuster from "./QuantityAdjuster";
 
+
+
 export default function ProductCard({product}){
 
     const {cart_products,add_to_cart} = useCart()
