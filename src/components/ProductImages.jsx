@@ -84,20 +84,22 @@ export default function ProductImages() {
 
             <div className="w-full h-screen grid grid-cols-3 grid-rows-3">
 
-                {image_urls.map((l,index)=> {
-                    return
-                    <div key={`${l}-${index}`} className={`w-full h-full ${l == preview_image_url?'border border-amber-400':''}`} onClick={(e)=>{
+{image_urls.map((l, index) => {
+    return (
+        <div
+            key={`${l}-${index}`}
+            className={`w-full h-full cursor-pointer ${
+                l === preview_image_url ? 'border-2 border-amber-400' : 'border border-transparent'
+            }`}
+            onClick={() => setPreviewImageUrl(l)}
+        >
+            <img src={l} alt={`Thumbnail ${index}`} className="w-full h-full object-cover" />
+        </div>
+    );
+})}
 
 
-                        setPreviewImageUrl(l)
-                    }
-                    } >
-
-                        <img src={l} />
-                        
-                    
-                     </div>
-                })}
+               
 
 
             </div>
