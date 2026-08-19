@@ -10,6 +10,7 @@ import MyOrders from "./pages/MyOrders"
 
 import OrderDetails from "./pages/OrderDetails";
 import AddProduct from "./pages/AddProduct";
+import ProductImages from "./components/ProductImages";
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
       <Route path ="/my_order/:id" element={<OrderDetails/>}/>
 
       <Route path ="/add_product" element={<AddProduct/>}    ></Route>
+
+      <Route path ="/products/:id/images" element={<ProductImages/>} ></Route>
 
 
     </Routes>

@@ -91,7 +91,8 @@ export default function ProductCard({product}){
                 { product.image_url && console.log(product.image_url)}
 
                 {product.image_url ? (
-                <img
+
+               <Link to={`/products/${product.product_id}/images`}> <img
       src={product.image_url}
       alt={product.title || product.name || "Product image"}
       loading="lazy"
@@ -101,7 +102,7 @@ export default function ProductCard({product}){
         e.currentTarget.onerror = null;
         e.currentTarget.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%239ca3af' viewBox='0 0 24 24'><path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/></svg>";
       }}
-    />
+    /> </Link>
   ) : (
     <span className="text-xs text-gray-400">No Image</span>
   )}
