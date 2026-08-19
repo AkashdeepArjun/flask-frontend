@@ -78,18 +78,20 @@ export default function ProductImages() {
 
     return(
 
-        <div className={`w-0.5 h-0.6 ${are_images_loading ?'animate-pulse':''}   esabsolute top-4 grif grid-cols-2  grid-rows-1 w-screen bg-gray-200 border-slate-500 rounded-2xl`}>
+        <div className={`w-0.5 h-0.6 ${are_images_loading ?'animate-pulse':''}   esabsolute top-4 grif grid-cols-2  grid-rows-1 bg-gray-200 border-slate-500 rounded-2xl`}>
 
             
-            {image_urls && (<div className="w-full max-h-full p-2 border border-b-cyan-100">
+            <div className="w-full max-h-full p-2 border border-b-cyan-100">
 
-                            <img src={preview_image_url} alt="" />
+                            
+                    <img src={preview_image_url} alt="" />
                 
                 
                 
-                        </div>
+            
+            </div>
 
-        ) && (
+           
 
             <div className="w-full max-h-full p-2 grid grid-cols-3 grid-rows-3">
 
@@ -123,14 +125,7 @@ export default function ProductImages() {
 
 
 
-        )
         
-        
-        
-        
-        
-        
-        }
 
             
 
