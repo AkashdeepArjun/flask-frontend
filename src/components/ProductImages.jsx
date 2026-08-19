@@ -82,7 +82,7 @@ export default function ProductImages() {
 
             <img src={preview_image_url} className="w-full h-full p-1 border border-slate-700 rounded-2xl"/>
 
-            <div className="w-full h-full grid grid-cols-3 grid-rows-3">
+            <div className="w-full h-screen grid grid-cols-3 grid-rows-3">
 
                 {image_urls.map((l)=>{
                     <div className={`w-full h-full ${l == preview_image_url?'border border-amber-400':''}`} onClick={(e)=>{
