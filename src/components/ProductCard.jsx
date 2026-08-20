@@ -90,7 +90,7 @@ export default function ProductCard({product}){
 
             <div className="mt-6 flex justify-between items-center pt-4 border-t border-slate-800">
 
-                <div className="absolute top-0.5 left-0.5 w-24 h-auto aspect-square shrink-0 overflow-hidden bg-gray-100 ">
+                <div className="absolute top-0.5 left-0.5 w-24 h-24 aspect-square shrink-0 overflow-hidden bg-gray-100 ">
 
                 { product.image_url && console.log(product.image_url)}
 
@@ -100,7 +100,7 @@ export default function ProductCard({product}){
       src={product.image_url}
       alt={product.title || product.name || "Product image"}
       loading="lazy"
-      className="h-full w-full object-cover "
+      className="h-full w-full object-cover object-center"
       onError={(e) => {
         // Fallback if image path 404s
         e.currentTarget.onerror = null;
