@@ -98,7 +98,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                             <div className="relative w-full h-full">
 
                                      <img
-                                        src={`https://www.laziakeey.in/api/static/uploads/${user.profile_url}`}
+                                        src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
                                         alt="profile img"
                                         className="w-full h-full object-cover"
                                     />
@@ -130,7 +130,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                             <div className="relative flex items-center justify-center p-4" >
 
                                 <ShoppingCartIcon className="w-12 h-12 p-2 border border-slate-200 rounded-2xl"></ShoppingCartIcon>
-                            {cart_products && cart_products.length>0  && (<p className="absolute top-0 right-0 m-1">{cart_products.length}</p>)}
+                            {cart_products && cart_products.length>0  && (<p className="absolute top-0 right-0 m-1 rounded-2xl bg-red-600 p-0.5 text-slate-100">{cart_products.length}</p>)}
                             </div>
                             </Link>)}
 
