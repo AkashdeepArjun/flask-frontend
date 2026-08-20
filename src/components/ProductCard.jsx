@@ -71,20 +71,20 @@ export default function ProductCard({product}){
 
             </QuantityAdjuster>
 
-            <p className="absolute top-0 right-3 text-gray-200">{product.product_id}</p>
+            {/* <p className="absolute top-0 right-3 text-gray-200">{product.product_id}</p> */}
 
             <button type="button" onClick={handle_add_to_cart}  disabled={addingToCart} className=" disabled:opacity-50 absolute bottom-0.5 right-0.5 px-3 py-1 text-md rounded-1xl bg-emerald-400 text-slate-100 transition-colors   hover:bg-purple-500  ">
                 Add To Cart
             </button>
 
-            <h3 className="text-lg font-bold text-slate-100 absolute bottom-1.5 left-0.5">
+            <h3 className="absolute bottom-1.5 left-0.75 text-lg font-bold text-slate-100 ">
               
               { product.name }
 
 
             </h3>
 
-            <p className="text-sm text-slate-400 mt-2 absolute bottom-0.5 ">
+            <p className="text-sm text-slate-400 mt-2 absolute bottom-px left-0 ">
             {  product.description  }
             </p>
 
