@@ -11,10 +11,13 @@ import { useAuth } from "../context/AuthContext";
 
 import { Link, replace, useNavigate } from "react-router-dom";
 
+import { useCart } from "../context/CartContext";
 
 export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions}) {
 
     const { user,logout } = useAuth()
+
+    const {cart_products,fetch_cart} = useCart()
 
     const navigate= useNavigate()
 
@@ -124,10 +127,10 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                         )}
 
                             {user && (<Link to="/my_cart" className="">
-                            <div className="relative flex items-center justify-center" >
+                            <div className="relative flex items-center justify-center p-4" >
 
                                 <ShoppingCartIcon className="w-12 h-12 p-2 border border-slate-200 rounded-2xl"></ShoppingCartIcon>
-                            <p className="absolute top-0 right-0">0</p>
+                            {cart_products && cart_products.length>0  && (<p className="absolute top-0 right-0 m-1">{cart_products.length}</p>)}
                             </div>
                             </Link>)}
 
