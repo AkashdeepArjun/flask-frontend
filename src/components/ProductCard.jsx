@@ -67,7 +67,7 @@ export default function ProductCard({product}){
 
         <div className=" relative bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between ">
 
-            <QuantityAdjuster quantity={quantity} onQuantityChange={onQuantityChange} className="absolute bottom-0.5 left-0.5 " >
+            <QuantityAdjuster quantity={quantity} onQuantityChange={onQuantityChange} className="absolute bottom-0.5 left-0.5" >
 
             </QuantityAdjuster>
 
