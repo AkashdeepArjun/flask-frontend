@@ -208,7 +208,7 @@ function Home() {
               </div>
 
 
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-300 ease-in-out'>
+              <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-300 ease-in-out'>
 
                     {is_loading && Array.from({ length: 10 }).map((_, index) => (
 

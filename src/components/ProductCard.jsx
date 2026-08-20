@@ -65,7 +65,7 @@ export default function ProductCard({product}){
     return (
       
 
-        <div className=" relative bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between shrink-0">
+        <div className=" relative bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between shrink-0 h-max">
 
             <QuantityAdjuster quantity={quantity} onQuantityChange={onQuantityChange} >
 
@@ -90,7 +90,7 @@ export default function ProductCard({product}){
 
             <div className="mt-6 flex justify-between items-center pt-4 border-t border-slate-800">
 
-                <div className="absolute top-0.5 left-0.5 w-24 h-24 aspect-square shrink-0 overflow-hidden bg-gray-100 ">
+                <div className="absolute top-0.5 left-0.5 w-24 h-auto aspect-square shrink-0 overflow-hidden bg-gray-100 ">
 
                 { product.image_url && console.log(product.image_url)}
 
