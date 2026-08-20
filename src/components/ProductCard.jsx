@@ -90,7 +90,7 @@ export default function ProductCard({product}){
 
             <div className="mt-6 flex justify-between items-center pt-4 border-t border-slate-800">
 
-                <div className="w-24 h-24 aspect-square shrink-0 overflow-hidden bg-gray-100 flex items-center justify-center">
+                <div className="absolute top-0.5 left-0.5 w-24 h-24 aspect-square shrink-0 overflow-hidden bg-gray-100 flex items-center justify-center">
 
                 { product.image_url && console.log(product.image_url)}
 
