@@ -77,7 +77,7 @@ export default function ProductCard({product}){
                 Add To Cart
             </button>
 
-            <h3 className="absolute bottom-1.5 left-0.75 text-lg font-bold text-slate-100 ">
+            <h3 className="absolute bottom-2 left-0.75 text-lg font-bold text-slate-100 ">
               
               { product.name }
 
@@ -124,7 +124,7 @@ export default function ProductCard({product}){
 
 
 
-               <span className="text-lg font-semibold text-emerald-400 absolute bottom-0.75 right-0.5">
+               <span className="text-lg font-semibold text-emerald-400 absolute bottom-4 right-0.5">
             
 
 
