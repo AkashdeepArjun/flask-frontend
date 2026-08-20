@@ -67,7 +67,7 @@ export default function ProductCard({product}){
 
         <div className=" relative bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between ">
 
-            <QuantityAdjuster quantity={quantity} onQuantityChange={onQuantityChange} className="absolute top-0.5 right-0.5" >
+            <QuantityAdjuster quantity={quantity} onQuantityChange={onQuantityChange} className="absolute bottom-0.5 left-0.5 " >
 
             </QuantityAdjuster>
 
@@ -96,7 +96,7 @@ export default function ProductCard({product}){
 
                 {product.image_url ? (
 
-               <Link to={`/products/${product.product_id}/images`}> <img
+               <Link to={`/products/${product.product_id}/images`} className="absolute top-0.5 right-0.5" > <img
       src={product.image_url}
       alt={product.title || product.name || "Product image"}
       loading="lazy"
