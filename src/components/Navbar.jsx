@@ -92,7 +92,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                         {user && (
                             <div className="grid grid-cols-3">
 
-                            <div className="w-24 h-24">
+                            <div className="relative w-full h-full">
 
                                      <img
                                         src={`https://www.laziakeey.in/api/static/uploads/${user.profile_url}`}
@@ -100,30 +100,38 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                         className="w-full h-full object-cover"
                                     />
 
+                                    
+                                    {user.is_verified && ( <VerifiedIcon  className="absolute top-0 right-0.5 w-6 h-6 bg-emerald-500 " />   )}
+
                             </div>
 
-                            <Link to="/my_cart" className="">
-                            <div className="relative flex items-center justify-center" >
 
-                                <ShoppingCartIcon></ShoppingCartIcon>
-                            <p className="absolute top-0 right-0">0</p>
-                            </div>
-                            </Link>
 
                             </div>
 
                         )}
 
+                        </div>
+
                         {!user && (
                         <div className="w-12 h-12 flex justify-center items-center">
                             <Link to="/login" >
-                            <icon/>
-
+                            <button className="px-4 py-2 bg-blue-900 hover:bg-blue-500 text-slate-100">Login</button>
                             </Link>
 
                         </div>
 
                         )}
+
+                            {user && (<Link to="/my_cart" className="">
+                            <div className="relative flex items-center justify-center" >
+
+                                <ShoppingCartIcon></ShoppingCartIcon>
+                            <p className="absolute top-0 right-0">0</p>
+                            </div>
+                            </Link>)}
+
+
 
                         {/* {user && (<h2 className="text-center overflow-hidden flex items-center justify-center w-full h-full bg-emerald-800 text-slate-100">Okay</h2>)} */}
 
@@ -133,9 +141,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         
 
-                    </div>
 
-                    {user && user.is_verified && ( <VerifiedIcon  className="absolute top-0 right-0.5 w-12 h-12 " />   )}
 
                     
 
