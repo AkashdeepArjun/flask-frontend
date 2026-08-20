@@ -126,7 +126,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                             {user && (<Link to="/my_cart" className="">
                             <div className="relative flex items-center justify-center" >
 
-                                <ShoppingCartIcon></ShoppingCartIcon>
+                                <ShoppingCartIcon className="w-12 h-12 p-2 border border-slate-200 rounded-2xl"></ShoppingCartIcon>
                             <p className="absolute top-0 right-0">0</p>
                             </div>
                             </Link>)}
