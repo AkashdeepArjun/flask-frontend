@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 
 import { Sparkles,ShieldCheck, LogInIcon, ShoppingCartIcon } from "lucide-react";
@@ -12,10 +12,13 @@ import { useAuth } from "../context/AuthContext";
 import { Link, replace, useNavigate } from "react-router-dom";
 
 import { useCart } from "../context/CartContext";
+import ProfileMenu from "./ProfileMenu";
 
 export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions}) {
 
     const { user,logout } = useAuth()
+
+    const {isProfileMenuOpen,setProfileMenuOpened} = useState(false)
 
     const {cart_products,fetch_cart} = useCart()
 
@@ -31,7 +34,28 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
         }
 
 
-    } 
+    }
+    
+    useEffect(()=>{
+
+        const handle_keydown = (e) =>{
+
+
+            if(e.key=="Escape"){
+
+            
+            setProfileMenuOpened(false)
+
+
+            }
+
+
+        }
+
+        window.addEventListener("keydown",handle_keydown)
+
+
+    })
 
 
 
@@ -93,7 +117,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
 
                         {user && (
-                            <div className="grid grid-cols-3">
+                            <div className="relative grid grid-cols-3">
 
                             <div className="relative w-full h-full">
 
@@ -101,12 +125,25 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                         src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
                                         alt="profile img"
                                         className="w-full h-full object-cover"
+                                        onClick={(e)=>{
+                                            e.stopPropagation()
+                                            setProfileMenuOpened(true)}}
                                     />
 
                                     
                                     {user.is_verified && ( <VerifiedIcon  className="absolute top-0 right-0.5 w-6 h-6 bg-emerald-500 " />   )}
 
                             </div>
+
+                            # TOGGLE PROFILE MENU
+
+                            {isProfileMenuOpen && (
+
+                            <ProfileMenu className="absolute top-2 right-2"></ProfileMenu>
+
+                            )}
+
+                            
 
 
 
