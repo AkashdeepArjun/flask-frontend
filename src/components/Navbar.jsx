@@ -152,9 +152,9 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                         src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
                                         alt="profile img"
                                         className="w-full h-full object-cover cursor-pointer"
-                                        onClick={()=>
+                                        onClick={
                                             
-                                            open_menu()
+                                            open_menu
                                             }
                                     />
 
