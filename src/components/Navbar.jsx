@@ -129,13 +129,13 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
             </div>
 
-                    <div className="relative mx-auto w-24 h-24 aspect-square rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
+                    <div className="relative mx-auto w-24 h-24  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
                         
                     
                         {user && (
                             <div className="relative grid grid-cols-3">
 
-                            <div className="relative w-full h-full">
+                            <div className="relative w-full h-full aspect-square ">
 
                                      <img
                                         src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
@@ -171,7 +171,6 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                         </div>
 
                             
-                        {isProfileMenuOpen && (<ProfileMenu className="absolute top-4 right-px" /> )}
 
 
 
