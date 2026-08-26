@@ -38,6 +38,9 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
     const open_menu = ()=>{
     
+        // setProfileMenuOpened(true);
+
+        console.log("CHECK BEFORE CRASH:", typeof setProfileMenuOpened);
         setProfileMenuOpened(true);
         
     };
