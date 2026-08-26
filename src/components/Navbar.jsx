@@ -18,7 +18,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
     const { user,logout } = useAuth()
 
-    const {isProfileMenuOpen,setProfileMenuOpened} = useState(false)
+    const [isProfileMenuOpen,setProfileMenuOpened] = useState(false)
 
     const {cart_products,fetch_cart} = useCart()
 
