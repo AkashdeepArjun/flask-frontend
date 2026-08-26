@@ -37,16 +37,20 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
     }
 
     const open_menu = ()=>{
+    
         setProfileMenuOpened(true)
+        
     }
 
     const close_menu =()=>{
+
         setProfileMenuOpened(false)
     }
 
     const handle_keydown = (e) =>{
 
 
+            e.preventDefault()
             if(e.key=="Escape"){
 
             
@@ -144,7 +148,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                         alt="profile img"
                                         className="w-full h-full object-cover cursor-pointer"
                                         onClick={(e)=>{
-
+                                            e.preventDefault()
                                             console.log("clicked")
                                             e.stopPropagation()
                                             open_menu()
