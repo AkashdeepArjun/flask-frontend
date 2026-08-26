@@ -12,6 +12,7 @@ import { useAuth } from "../context/AuthContext";
 import { Link, replace, useNavigate } from "react-router-dom";
 
 import { useCart } from "../context/CartContext";
+
 import ProfileMenu from "./ProfileMenu";
 
 export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions}) {
@@ -63,8 +64,8 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
             }
 
 
-        }
 
+        }
 
 
     
@@ -85,16 +86,12 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
     })
 
-
-
-
-
     return(
 
         <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b
          border-slate-800/80 px-6 py-4">
 
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
+        <div className=" relative max-w-6xl mx-auto flex justify-between items-center">
 
             <div className="flex items-center gap-2">
 
@@ -109,11 +106,6 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                     {title}
 
                 </span>
-
-
-
-
-
 
 
 
@@ -137,15 +129,9 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
             </div>
 
-                    <div className="relative w-24 h-24  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden">
+                    <div className="absolute top-3 right-7  w-24 h-24  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden">
                         
-                      {/*   {user && (
-                        <div className=` {user ? "bg-emerald-400" : "bg-red-500"}` > 
-
-                        </div>
-                        )} */}
-
-
+                    
                         {user && (
                             <div className="relative grid grid-cols-3">
 
@@ -166,13 +152,6 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                             </div>
 
-                            # TOGGLE PROFILE MENU
-
-                            {isProfileMenuOpen && (
-
-                            <ProfileMenu className="absolute bottom-2right-2"></ProfileMenu>
-
-                            )}
 
                             
 
