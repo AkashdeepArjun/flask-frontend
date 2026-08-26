@@ -129,7 +129,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
             </div>
 
-                    <div className="absolute top-3 right-1 w-24 h-24  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
+                    <div className="absolute top-3 right-px w-24 h-24  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
                         
                     
                         {user && (
