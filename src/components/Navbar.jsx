@@ -50,7 +50,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
     const handle_keydown = (e) =>{
 
 
-            e.preventDefault()
+            // e.preventDefault()
             if(e.key=="Escape"){
 
             
@@ -148,9 +148,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                         alt="profile img"
                                         className="w-full h-full object-cover cursor-pointer"
                                         onClick={(e)=>{
-                                            e.preventDefault()
-                                            console.log("clicked")
-                                            e.stopPropagation()
+                                            
                                             open_menu()
                                             }}
                                     />
