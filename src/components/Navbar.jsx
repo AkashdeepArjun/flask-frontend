@@ -38,14 +38,14 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
     const open_menu = ()=>{
     
-        setProfileMenuOpened(true)
+        setProfileMenuOpened(true);
         
-    }
+    };
 
     const close_menu =()=>{
 
-        setProfileMenuOpened(false)
-    }
+        setProfileMenuOpened(false);
+    };
 
     const handle_keydown = (e) =>{
 
@@ -54,7 +54,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
             if(e.key=="Escape"){
 
             
-                close_menu()
+                close_menu();
 
                 
             }
@@ -68,8 +68,11 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
     useEffect(()=>{
 
         
+        if(isProfileMenuOpen){
 
         window.addEventListener("keydown",handle_keydown)
+        
+    }
 
 
         return ()=>{
