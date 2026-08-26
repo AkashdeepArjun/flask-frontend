@@ -81,6 +81,8 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
 
 
+
+
     return(
 
         <header className="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b
@@ -147,10 +149,10 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                         src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
                                         alt="profile img"
                                         className="w-full h-full object-cover cursor-pointer"
-                                        onClick={(e)=>{
+                                        onClick={()=>
                                             
                                             open_menu()
-                                            }}
+                                            }
                                     />
 
                                     
