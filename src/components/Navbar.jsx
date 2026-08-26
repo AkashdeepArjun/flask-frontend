@@ -55,6 +55,11 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
         window.addEventListener("keydown",handle_keydown)
 
 
+        return ()=>{
+            window.removeEventListener("keydown",handle_keydown)
+        };
+
+
     })
 
 
@@ -124,8 +129,10 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                      <img
                                         src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
                                         alt="profile img"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover cursor-pointer"
                                         onClick={(e)=>{
+
+                                            console.log("clicked")
                                             e.stopPropagation()
                                             setProfileMenuOpened(true)}}
                                     />
@@ -139,7 +146,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                             {isProfileMenuOpen && (
 
-                            <ProfileMenu className="absolute top-2 right-2"></ProfileMenu>
+                            <ProfileMenu className="absolute bottom-2right-2"></ProfileMenu>
 
                             )}
 
