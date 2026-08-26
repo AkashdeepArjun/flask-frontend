@@ -152,9 +152,11 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                             
                             
-                        {isProfileMenuOpen && (<ProfileMenu className="absolute top-4 right-px" /> )}
                             
                             </div>
+
+                            
+                        {isProfileMenuOpen && (<ProfileMenu className="absolute top-4 right-px" /> )}
 
 
                             
