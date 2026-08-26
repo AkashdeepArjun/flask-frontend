@@ -150,6 +150,10 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                     
                                     {user.is_verified && ( <VerifiedIcon  className="absolute top-0 right-0.5 w-6 h-6 bg-emerald-500 " />   )}
 
+                            
+                            
+                        {isProfileMenuOpen && (<ProfileMenu className="absolute top-4 right-px" /> )}
+                            
                             </div>
 
 
@@ -164,7 +168,6 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                         </div>
 
 
-                        {isProfileMenuOpen && (<ProfileMenu className="absolute top-4 right-px" /> )}
 
 
 
