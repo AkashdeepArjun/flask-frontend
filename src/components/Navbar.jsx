@@ -163,6 +163,13 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         </div>
 
+
+                        {isProfileMenuOpen && (<ProfileMenu className="absolute top-3 right-1" /> )}
+
+
+
+
+
                         {!user && (
                         <div className="w-12 h-12 flex justify-center items-center">
                             <Link to="/login" >
