@@ -129,7 +129,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
             </div>
 
-                    <div className="relative mx-auto w-24 h-24  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
+                    <div className="relative mx-auto w-24 h-24 aspect-square rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
                         
                     
                         {user && (
@@ -167,10 +167,11 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                         )}
 
                         
-                        {isProfileMenuOpen && (<ProfileMenu className="absolute top-4 right-px" /> )}
 
                         </div>
 
+                            
+                        {isProfileMenuOpen && (<ProfileMenu className="absolute top-4 right-px" /> )}
 
 
 
