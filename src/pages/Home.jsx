@@ -195,7 +195,7 @@ function Home() {
       <main className='relative max-w-6xl mx-auto p-6 space-y-6'>
 
         
-      { isMenuOpen && (<ProfileMenu className="absolute top-12 right-px"/>) }
+      { isMenuOpen && (<ProfileMenu className="absolute top-12 right-0"/>) }
 
         {/* Error Alert */}
         {error && (
