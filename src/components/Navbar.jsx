@@ -25,17 +25,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
     const navigate= useNavigate()
 
-    const logout_user = async(e) => {
-
-        e.preventDefault()
-        const response = await logout()
-        if(response.status === "ok"){
-
-            navigate("/",{replace:true})
-        }
-
-
-    }
+  
 
     const open_menu = ()=>{
     
@@ -190,13 +180,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         )}
 
-                            {user && (<Link to="/my_cart" className="">
-                            <div className="relative flex items-center justify-center p-4" >
-
-                                <ShoppingCartIcon className="w-12 h-12 p-2 border border-slate-200 rounded-2xl"></ShoppingCartIcon>
-                            {cart_products && cart_products.length>0  && (<p className="absolute top-0 right-0 m-1 rounded-2xl bg-red-600 p-0.5 text-slate-100">{cart_products.length}</p>)}
-                            </div>
-                            </Link>)}
+                            
 
 
 
@@ -213,7 +197,6 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                     
 
                     
-                {user && (<button onClick={logout_user} className="bg-emerald-900 text-slate-200 rounded-2xl px-3 py-1.75 hover:bg-blue-500 transition-colors hover:cursor-pointer" >Logout </button>
 
                 
 
