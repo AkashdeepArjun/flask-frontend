@@ -11,6 +11,8 @@ import { div } from 'framer-motion/client'
 import api from '../api/client'
 import ProductCardSkeleton from '../components/ProductCardSkeleton'
 
+import ProfileMenu from '../components/ProfileMenu'
+
 
 function Home() {
   // const [count, setCount] = useState(0)
