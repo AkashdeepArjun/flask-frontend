@@ -35,6 +35,8 @@ function Home() {
 
   })
 
+  const [coords,setCoords]=useState({top:0,left:0})
+
   const [search_query,setQuery] = useState('')
 
   const [debouncedQuery,setDebouncedQuery] = useState('')
@@ -184,18 +186,31 @@ function Home() {
 
   }
 
+  const onRecieveCoords=(top,left) =>{
+
+    // setCoords((prev)=>{...prev,{top:top,left:left}})
+
+    
+// setCoords({ top: top, left: left });
+
+// Shorthand version (since key and variable names match):
+setCoords({ top, left });
+
+
+  }
+
 
 
   return (
 
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans">
 
-            <Navbar title='MeCommerce' search_query={search_query} setQuery={setQuery} suggestions={suggestions} onProfileClick={onProfileClick} />
+            <Navbar title='MeCommerce' search_query={search_query} setQuery={setQuery} suggestions={suggestions} onProfileClick={onProfileClick} onRecieveCoords={onRecieveCoords} />
 
       <main className='relative max-w-6xl mx-auto p-6 space-y-6'>
 
         
-      { isMenuOpen && (<ProfileMenu className="absolute top-12 right-0"/>) }
+      { isMenuOpen && (<ProfileMenu className={`absolute top-${coords.top} left-${coords.left} `}/>) }
 
         {/* Error Alert */}
         {error && (

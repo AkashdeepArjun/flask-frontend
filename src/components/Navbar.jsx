@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useRef} from "react";
 
 
 import { Sparkles,ShieldCheck, LogInIcon, ShoppingCartIcon } from "lucide-react";
@@ -15,7 +15,7 @@ import { useCart } from "../context/CartContext";
 
 import ProfileMenu from "./ProfileMenu";
 
-export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions,onProfileClick}) {
+export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions,onProfileClick,onRecieveCoords}) {
 
     const { user,logout } = useAuth()
 
@@ -25,11 +25,24 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
     const navigate= useNavigate()
 
+    const profile_ref = useRef(null)
+
   
 
     const open_menu = ()=>{
     
         // setProfileMenuOpened(true);
+
+        if(profile_ref.current){
+
+            const rect = profile_ref.current.getBoundingClientReact();
+
+            onRecieveCoords(top:rect.top+window.scrollY,left:rect.left+window.scrollX)
+
+            
+
+
+        }
 
         console.log("CHECK BEFORE CRASH:", typeof setProfileMenuOpened);
         setProfileMenuOpened(true);
@@ -128,6 +141,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                             <div className="relative w-full h-full aspect-square ">
 
                                      <img
+                                        ref={profile_ref}
                                         src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
                                         alt="profile img"
                                         className="w-24 h-24 object-cover cursor-pointer object-center"
