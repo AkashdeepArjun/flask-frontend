@@ -159,7 +159,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         </div>
 
-                        { isProfileMenuOpen && (<ProfileMenu className="absolute top-4 right-px"/>) }
+                        { isProfileMenuOpen && (<ProfileMenu className="absolute top-12 right-px"/>) }
 
 
 
@@ -188,7 +188,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         {console.log('user value is ', user)}
 
-                            
+
 
 
                         
