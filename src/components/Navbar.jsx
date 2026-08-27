@@ -133,7 +133,6 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                         
                     
                         {user && (
-                            <div className="relative grid grid-cols-3">
 
                             <div className="relative w-full h-full aspect-square ">
 
@@ -162,7 +161,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
 
 
-                            </div>
+                        
 
                         )}
 
