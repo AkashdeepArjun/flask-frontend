@@ -21,7 +21,7 @@ export default function ProfileMenu({style}) {
     }
 
 
-return (<div className="w-48 flex flex-col items-start h-max gap-1 bg-orange-50 z-50" style={style}>
+return (<div className=" w-48 flex flex-col items-start h-max gap-1 bg-orange-50 z-50" style={style}>
 
         <Link to="/my_orders" className="border-b border-gray-500 text-blue-700"><p>My Orders</p></Link>
 
@@ -32,7 +32,7 @@ return (<div className="w-48 flex flex-col items-start h-max gap-1 bg-orange-50 
 
 
 
-        {user && (<button onClick={logout_user} className="bg-emerald-900 text-slate-200 rounded-2xl px-3 py-1.75 hover:bg-blue-500 transition-colors hover:cursor-pointer" >Logout </button>)}
+        {user && (<button onClick={logout_user} className="bg-emerald-900 text-slate-200 rounded-2xl px-3 py-1.75 hover:bg-blue-500 transition-colors hover:cursor-pointer mx-auto" >Logout </button>)}
 
 
 </div>)
