@@ -210,7 +210,7 @@ setCoords({ top, left });
       <main className='relative max-w-6xl mx-auto p-6 space-y-6'>
 
         
-      { isMenuOpen && (<ProfileMenu className={`absolute top-${coords.top} left-${coords.left} `}/>) }
+      { isMenuOpen && (<ProfileMenu className={`absolute top-${coords.top} right-${coords.left} `}/>) }
 
         {/* Error Alert */}
         {error && (
