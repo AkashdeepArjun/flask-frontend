@@ -21,18 +21,18 @@ export default function ProfileMenu({style}) {
     }
 
 
-return (<div className=" w-48 flex flex-col items-start h-max gap-1 bg-orange-50 z-50" style={style}>
+return (<div className=" w-48 flex flex-col items-start h-max gap-1 bg-orange-50 z-50 p-1" style={style}>
 
-        <Link to="/my_orders" className="border-b border-gray-500 text-blue-700"><p>My Orders</p></Link>
-
-
-        <Link to ="/my_cart" className="border-b border-gray-500 text-blue-700" > <p> My Cart  </p>   </Link>
-
-        <Link to ="/my_profile" className="border-b border-gray-700 text-blue-700" > <p> My Profile</p>  </Link>
+        <Link to="/my_orders" className="border-b border-gray-500 text-blue-700 hover:bg-sky-950 hover:text-slate-50 transition-all duration-200"><p>My Orders</p></Link>
 
 
+        <Link to ="/my_cart" className="border-b border-gray-500 text-blue-700 hover:bg-sky-950 hover:text-slate-50    " > <p> My Cart  </p>   </Link>
 
-        {user && (<button onClick={logout_user} className="bg-emerald-900 text-slate-200 rounded-2xl px-3 py-1.75 hover:bg-blue-500 transition-colors hover:cursor-pointer mx-auto" >Logout </button>)}
+        <Link to ="/my_profile" className="border-b border-gray-700 text-blue-700  hover:bg-sky-950 hover:text-slate-50 " > <p> My Profile</p>  </Link>
+
+
+
+        {user && (<button onClick={logout_user} className="bg-emerald-900 text-slate-200 rounded-2xl px-3 py-1.75 hover:bg-blue-500 transition-colors hover:cursor-pointer:w" >Logout </button>)}
 
 
 </div>)
