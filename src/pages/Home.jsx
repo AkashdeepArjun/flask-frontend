@@ -39,6 +39,8 @@ function Home() {
 
   const [suggestions,setSuggestions] = useState([])
 
+  const [isMenuOpen,setMenuOpen] = useState(false)
+
 
   useEffect(()=>{ 
    
@@ -165,13 +167,33 @@ function Home() {
 
   },[meta])
 
+
+  const onProfileClick = (state) =>{
+
+    if (state){
+
+      setMenuOpen(true)
+
+    }else{
+
+      setMenuOpen(false)
+    }
+
+
+  }
+
+
+
   return (
 
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans">
 
-            <Navbar title='MeCommerce' search_query={search_query} setQuery={setQuery} suggestions={suggestions} />
+            <Navbar title='MeCommerce' search_query={search_query} setQuery={setQuery} suggestions={suggestions} onProfileClick={onProfileClick} />
 
-      <main className='max-w-6xl mx-auto p-6 space-y-6'>
+      <main className='relative max-w-6xl mx-auto p-6 space-y-6'>
+
+        
+      { isMenuOpen && (<ProfileMenu className="absolute top-12 right-px"/>) }
 
         {/* Error Alert */}
         {error && (

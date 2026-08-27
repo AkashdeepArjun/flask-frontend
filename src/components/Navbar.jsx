@@ -15,7 +15,7 @@ import { useCart } from "../context/CartContext";
 
 import ProfileMenu from "./ProfileMenu";
 
-export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions}) {
+export default function Navbar ({title="MeCommerce",search_query,setQuery,suggestions,onProfileClick}) {
 
     const { user,logout } = useAuth()
 
@@ -33,12 +33,13 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
         console.log("CHECK BEFORE CRASH:", typeof setProfileMenuOpened);
         setProfileMenuOpened(true);
-        
+        onProfileClick(true)     
     };
 
     const close_menu =()=>{
 
         setProfileMenuOpened(false);
+        onProfileClick(false)
     };
 
     const handle_keydown = (e) =>{
@@ -159,7 +160,6 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         </div>
 
-                        { isProfileMenuOpen && (<ProfileMenu className="absolute top-12 right-px"/>) }
 
 
 
