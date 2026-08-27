@@ -213,7 +213,7 @@ setCoords({ top, left });
       { isMenuOpen && (<ProfileMenu style={{
       position: 'absolute',
       top: `${coords.top}px`,
-      left: `${coords.left}px`
+      left: `${coords.left-100}px`
     }}      />) }
 
         {/* Error Alert */}
