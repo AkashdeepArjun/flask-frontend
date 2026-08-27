@@ -37,9 +37,9 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
             const rect = profile_ref.current.getBoundingClientReact();
 
-            onRecieveCoords(top:rect.top+window.scrollY,left:rect.left+window.scrollX)
+            onRecieveCoords(rect.top+window.scrollY,rect.left+window.scrollX)
 
-            
+
 
 
         }
