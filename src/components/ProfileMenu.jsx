@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useAuth } from "../context/AuthContext";
 
-export default function ProfileMenu() {
+export default function ProfileMenu({style}) {
 
    const { user,logout } = useAuth()
 
@@ -21,7 +21,7 @@ export default function ProfileMenu() {
     }
 
 
-return (<div className="w-48 flex flex-col items-start h-max gap-1 bg-orange-50 z-50">
+return (<div className="w-48 flex flex-col items-start h-max gap-1 bg-orange-50 z-50" style={style}>
 
         <Link to="/my_orders" className="border-b border-gray-500 text-blue-700"><p>My Orders</p></Link>
 
