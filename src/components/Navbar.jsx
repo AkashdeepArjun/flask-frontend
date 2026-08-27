@@ -188,6 +188,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                         {console.log('user value is ', user)}
 
+                            
 
 
                         
