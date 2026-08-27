@@ -200,7 +200,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
                 
 
-                ) }
+                
 
                 
 
