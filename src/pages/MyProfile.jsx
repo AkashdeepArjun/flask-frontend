@@ -71,7 +71,7 @@ export default function MyProfile(){
                 <h1 className="font-bold w-max">{user.usermail} </h1>
 
                 {user && !user.is_verified && (  
-                <button disabled={state_sending_mail} className="bg-amber-800 text-slate-100 w-ma" onClick={send_verification_mail} > {send_verification_mail?'SENDING':'VERIFY_EMAIL'} </button> ) }
+                <button disabled={state_sending_mail} className="bg-amber-800 text-slate-100 w-ma px-4 py-2" onClick={send_verification_mail} > {send_verification_mail?'SENDING':'VERIFY_EMAIL'} </button> ) }
 
                 {user && user.is_verified && (<h3 className="bg-green-950 text-slate-100">verified!</h3>)}
             </div>  
@@ -79,7 +79,7 @@ export default function MyProfile(){
             {message && (
                 <div className=" absolute top-4 left-4 border border-green-800 bg-slate-900 text-green-700">
 
-                    <h2 className="text-center">{message}</h2>
+                    <h2 className="text-center px-4 py-2">{message}</h2>
                     
                 
                 
