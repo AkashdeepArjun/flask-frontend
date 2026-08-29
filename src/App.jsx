@@ -11,6 +11,7 @@ import MyOrders from "./pages/MyOrders"
 import OrderDetails from "./pages/OrderDetails";
 import AddProduct from "./pages/AddProduct";
 import ProductImages from "./components/ProductImages";
+import MyProfile from "./pages/MyProfile";
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
       <Route path ="/my_order/:id" element={<OrderDetails/>}/>
 
       <Route path ="/add_product" element={<AddProduct/>}    ></Route>
+
+      <Route  path="/my_profile" element={<MyProfile/>} ></Route>
 
       <Route path ="/products/:product_id/images" element={<ProductImages/>} ></Route>
 
