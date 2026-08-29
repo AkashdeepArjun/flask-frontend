@@ -71,7 +71,7 @@ export default function MyProfile(){
                 <h1 className="font-bold w-max">{user.usermail} </h1>
 
                 {user && !user.is_verified && (  
-                <button disabled={state_sending_mail} className="bg-amber-800 text-slate-100 w-ma" onClick={send_verification_mail} > {send_verification_mail?SENDING:VERIFY_EMAIL} </button> ) }
+                <button disabled={state_sending_mail} className="bg-amber-800 text-slate-100 w-ma" onClick={send_verification_mail} > {send_verification_mail?'SENDING':'VERIFY_EMAIL'} </button> ) }
 
                 {user && user.is_verified && (<h3 className="bg-green-950 text-slate-100">verified!</h3>)}
             </div>  
