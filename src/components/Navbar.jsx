@@ -115,7 +115,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
             </div>
 
-            <div className="w-full sm:w-80">
+            <div className="w-full sm:w-80 absolute left-1/3">
 
                 <SearchBar search_query={search_query} setQuery={setQuery} suggestions={suggestions} />
 
@@ -132,7 +132,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
             {/* </div */}
 
-                    <div className="absolute top-2 right-px w-16 h-16 aspect-square  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
+                    <div className="absolute top-0.5 right-px w-16 h-16 aspect-square  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
                         
                     
                         {user && (
