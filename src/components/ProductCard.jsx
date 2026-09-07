@@ -100,7 +100,7 @@ export default function ProductCard({product}){
       src={product.image_url}
       alt={product.title || product.name || "Product image"}
       loading="lazy"
-      className="h-full w-full object-cover object-center"
+      className="h-full w-full object-cover object-center aspect-square"
       onError={(e) => {
         // Fallback if image path 404s
         e.currentTarget.onerror = null;
