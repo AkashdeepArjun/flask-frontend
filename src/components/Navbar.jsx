@@ -137,13 +137,13 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                     
                         {user && (
 
-                            <div className="relative w-full h-full aspect-square ">
+                            <div className=" w-full h-full aspect-square ">
 
                                      <img
                                         ref={profile_ref}
                                         src={`https://www.laziakeey.in/static/uploads/${user.profile_url}`}
                                         alt="profile img"
-                                        className="w-24 h-24 object-cover cursor-pointer object-center"
+                                        className="w-full h-full object-cover cursor-pointer object-center"
                                         onClick={
                                             
                                             open_menu
@@ -151,7 +151,7 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
                                     />
 
                                     
-                                    {user.is_verified && ( <VerifiedIcon  className="absolute top-0 right-0.5 w-6 h-6 bg-emerald-500 " />   )}
+                                    {/* {user.is_verified && ( <VerifiedIcon  className="absolute top-0 right-0.5 w-6 h-6 bg-emerald-500 " />   )} */}
 
                             
                             
