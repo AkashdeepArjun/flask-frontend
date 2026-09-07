@@ -125,13 +125,13 @@ export default function Navbar ({title="MeCommerce",search_query,setQuery,sugges
 
 
 
-            <div className="flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-medium text-emerald-400">
+         {/*    <div className="flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-xs font-medium text-emerald-400">
 
-                <ShieldCheck className="h-3.5 w-3.5" />
+                {/* <ShieldCheck className="h-3.5 w-3.5" /> */}
                 <span> Flask Api conntected  </span>
 
 
-            </div>
+            {/* </div */}
 
                     <div className="absolute top-3 right-px w-24 h-24  rounded-full border-2 border-dashed bg-slate-950 border-slate-700 flex items-center justify-center overflow-hidden ">
                         
