@@ -141,7 +141,7 @@ const inputStyle = {
 
                 // headers:{"Content-Type": "multipart/form-data"},
 
-                headers:{'Content-Type': 'multipart/form-data'},
+                // headers:{'Content-Type': 'multipart/form-data'},
 
                 onUploadProgress:(ProgressEvent)=>{
 
