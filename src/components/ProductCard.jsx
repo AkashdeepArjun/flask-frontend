@@ -53,11 +53,11 @@ export default function ProductCard({product}){
     }
 
 
-
-
-
-
     }
+
+
+
+
 
 
 
@@ -65,7 +65,7 @@ export default function ProductCard({product}){
     return (
       
 
-        <div className=" relative aspect-square w-full bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between h-full ">
+        <div className=" relative aspect-square w-full bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between h-full ">
 
             <QuantityAdjuster quantity={quantity} onQuantityChange={onQuantityChange} >
 
