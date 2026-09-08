@@ -10,7 +10,7 @@ export default function ProductCardSkeleton(){
     return (
       
 
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between animate-pulse ">
+        <div className="aspect-square w-full bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between animate-pulse ">
 
             <h3 className="text-lg font-bold text-slate-100">
               
