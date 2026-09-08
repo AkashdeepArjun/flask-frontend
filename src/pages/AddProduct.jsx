@@ -139,7 +139,7 @@ const inputStyle = {
             // UPLOADING PRODUCT LOGIC 
             const response = await api.post('/inventory',payload,{
 
-               
+
 
                 onUploadProgress:(ProgressEvent)=>{
 
@@ -159,10 +159,11 @@ const inputStyle = {
 
 
 
-            })
+            });
 
-            console.log(`response recieved was ${response}`)
-            const wrapped_data = response.data 
+            console.log(`response recieved was ${response}`);
+            
+            const wrapped_data = response.data;
 
             console.log(`wrappeed response is ${wrapped_data}`);
 
