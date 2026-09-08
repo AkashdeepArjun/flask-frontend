@@ -163,7 +163,7 @@ const inputStyle = {
 
             })
 
-            console.log(response)
+            console.log(`response recieved was ${response}`)
             const wrapped_data = response.data 
 
             console.log(`wrappeed response is ${wrapped_data}`);
