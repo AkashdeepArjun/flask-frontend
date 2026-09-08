@@ -96,7 +96,7 @@ export default function ProductCard({product}){
 
                 {product.image_url ? (
 
-               <Link to={`/products/${product.product_id}/images`} className="absolute top-0.5 right-0.5" > <img
+               <Link to={`/products/${product.product_id}/images`} className="absolute top-0 left-0" > <img
       src={product.image_url}
       alt={product.title || product.name || "Product image"}
       loading="lazy"
