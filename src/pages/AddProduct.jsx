@@ -86,7 +86,7 @@ const inputStyle = {
 
     const handle_submit = async(e) =>{
 
-        e.preventDefault()
+        e.preventDefault();
 
         setSubmitting(true)
         setUploadProgress(0)
@@ -139,9 +139,7 @@ const inputStyle = {
             // UPLOADING PRODUCT LOGIC 
             const response = await api.post('/inventory',payload,{
 
-                // headers:{"Content-Type": "multipart/form-data"},
-
-                // headers:{'Content-Type': 'multipart/form-data'},
+               
 
                 onUploadProgress:(ProgressEvent)=>{
 
